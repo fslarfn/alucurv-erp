@@ -1,6 +1,6 @@
 "use client";
 
-import { Order } from '../../types/order';
+import { Order } from '../types/order';
 
 interface LabelModalProps {
     order: Order | null;

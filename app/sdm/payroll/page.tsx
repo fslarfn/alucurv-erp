@@ -9,9 +9,14 @@ export default function PayrollPage() {
     const [period, setPeriod] = useState(new Date().toISOString().slice(0, 7)); // YYYY-MM
     const [generatedRecord, setGeneratedRecord] = useState<PayrollRecord | null>(null);
 
-    const handleGenerate = (id: string) => {
-        const record = generatePayroll(id, period);
-        setGeneratedRecord(record);
+    const handleGenerate = async (id: string) => {
+        try {
+            const record = await generatePayroll(id, period);
+            setGeneratedRecord(record);
+        } catch (error) {
+            console.error("Error generating payroll:", error);
+            alert("Gagal generate slip gaji");
+        }
     };
 
     const formatMoney = (val: number) => `Rp ${val.toLocaleString('id-ID')}`;

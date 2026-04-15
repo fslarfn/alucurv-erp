@@ -1,4 +1,5 @@
 import { db } from '../../lib/firebase';
+import { Expense } from '../../types/expense';
 import {
     collection,
     getDocs,
@@ -10,16 +11,6 @@ import {
     query,
     orderBy
 } from 'firebase/firestore';
-
-// Define types locally if not in a shared type file, or import if available.
-// Based on Context, Expense is: { id, date, category, description, amount }
-export interface Expense {
-    id: string;
-    date: string;
-    category: string;
-    description: string;
-    amount: number;
-}
 
 const COLLECTION_NAME = 'expenses';
 

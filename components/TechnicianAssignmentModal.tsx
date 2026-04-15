@@ -45,7 +45,7 @@ export default function TechnicianAssignmentModal({ isOpen, onClose, onConfirm }
                     <button
                         className="btn btn-primary"
                         disabled={!selectedId}
-                        onClick={() => onConfirm(selectedId)}
+                        onClick={() => onConfirm([selectedId])}
                     >
                         Simpan & Selesai
                     </button>
